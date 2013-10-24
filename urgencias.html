@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title></title>
+        <script>
+            try {
+
+    $(function() {
+
+    });
+
+  } catch (error) {
+    console.error("Your javascript has an error: " + error);
+  }
+        </script>
+        </head>
+        <body>
+<!-- Home -->
+<div data-role="page" id="urgencias">
+          <div id="header" data-theme="b" data-role="header" class="cyheader">
+    <h3> Urgencias </h3>
+  </div>
+          <div data-role="content">
+    <p>Te ofrecemos un servicio de urgencias por si tienes algún problema. También te ofrecemos un listado de problemas típicos.</p>
+    <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
+              <div data-role="collapsible" data-collapsed="true" data-theme="a">
+        <h3> Teléfono de urgencias </h3>
+        <div align="center"><a href="tel:+34639839829"><img src="images/icotelefono.png" alt="Llama a Llaca" /></a></div>
+      </div>
+              <div data-role="collapsible" data-collapsed="true" data-theme="b">
+        <h3> Saca y envía una foto </h3>
+        <div align="center"><a href="#" onClick="fotografia()" ><img src="images/icofoto.png" alt="Sacar Llaca" width="75px" height="75px"/></a>&nbsp;&nbsp;&nbsp;<a href="#" onClick="mandarfoto()" ><img src="images/icomail.png" alt="Mandar foto a Llaca" width="75px" height="75px"/></a></div>
+        <div align="center"><img width="250px" height="250px" id="imagen1" src="images/basefoto.jpg" /></div>
+      </div>
+              <div data-role="collapsible" data-collapsed="true" data-theme="d">
+        <h3> Problemas comunes </h3>
+        <div data-role="collapsible-set" data-theme="e" data-content-theme="c">
+                  <div data-role="collapsible" data-collapsed="true" data-theme="e">
+            <h3> Primera ayuda </h3>
+            <!---->
+            <div data-role="collapsible" data-collapsed="true" data-theme="a">
+                      <h3> Brackets despegado. </h3>
+                      <p>Si un bracket se despega, usualmente permanece conectado al arco. Se puede utilizar una pinza de depilar para reposicionar el bracket si este gira alrededor del arco y es una fuente de molestia. Llámanos e informa del problema.</p>
+                      <p>Si alguna pieza de tu aparato se rompe, guarda la pieza o el aparato y llama a nuestra oficina para concertar una visita.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                      <h3> Arco roto o desenganchado </h3>
+                      <p>Si el arco se ha salido del tubo o ranura donde está insertado en la última muela, intenta colocarlo con unas pinzas de depilar. Si el arco no te está dañando coloca un trozo de cera sobre la zona. Si te está molestando y la cera no te ayuda, puedes cortar el arco con unos pequeños alicates o cortaúñas cerca de la parte trasera del último bracket por el que pase. Este recurso solo debe utilizarse cuando la ayuda profesional no está disponible.</p>
+                      <p>Si alguna pieza de tu aparato se rompe, guarda la pieza o el aparato y llama a nuestra oficina para concertar una visita.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="d">
+                      <h3>Ligadura desaparecida</h3>
+                      <p>Si la ligadura que mantiene el bracket en la posición correcta con respecto al arco se ha perdido, concierta una cita con nosotros para solucionarlo.</p>
+                      <p>Esto no es ninguna urgencia y podemos fijar la cita cómodamente para solucionarlo.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="e">
+                      <h3> Retenedor roto</h3>
+                      <p>Si un retenedor se despega no intentes retirarlo. Llámanos para que podamos sustituirlo.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="f">
+                      <h3>Lengua, encías o mejillas cortadas</h3>
+                      <p>Si te rozas las encías, lengua o el interior de las mejillas, aplica presión con los dedos en la zona afectada durante unos minutos.</p>
+                      <p>Para aliviar las heridas en la boca enjuágate con agua salada templada.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="g">
+                      <h3> Comida pegada</h3>
+                      <p>Si quedan trozos de comida pegados entre los dientes o brackets utiliza hilo dental o cepillos interproximales para desalojar la comida.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="h">
+                      <h3> Arco que pincha</h3>
+                      <p>Si un arco causa molestias, empuja el arco lejos de la zona afectada utilizando una goma de borrar de un lápiz o bien un bastón para los oídos.</p>
+                      <p>También puede utilizar unas pinzas de depilar para deslizarlo hasta colocarlo en una posición que moleste. Si el arco no puede ser desplazado, cubre el extremo del arco con una pequeña pieza de cera, o una bolita de algodón.</p>
+                      <p>Si esto no funciona, el arco puede cortarse con unos alicates pequeños o cortaúñas.</p>
+                      <p>Luego llama a la clínica para fijar una cita y poder evaluarlo.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="i">
+                      <h3> Separadores de goma perdidos </h3>
+                      <p> Si el separador cae de forma natural no pasa nada, no te preocupes.</p>
+                      <p>En cambio, es recomendable no comer chicles o caramelos masticables para evitar que caigan antes de tiempo, en dicho caso llámanos para que podamos solucionarlo.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="a">
+                      <h3> Dolor dental</h3>
+                      <p> Toma un calmante (el que utilices habitualmente pero no aspirina) si te duelen los dientes después de una visita.</p>
+                      <p>Si tras las visitas siempre te duele y no remite tras un par de días llámanos para que hagamos una revisión. Es inusual que duelan los dientes días después de una visita a la clínica. </p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                      <h3> Aparato tragado</h3>
+                      <p>Mantén la calma en caso de que te tragues el aparato o una pieza.</p>
+                      <p>Usualmente irá al estómago, siendo expulsado por el tracto intestinal. No obstante, si experimentas dificultades respiratorias debes buscar inmediatamente atención médica.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="d">
+                      <h3> Irritaciones por el arco</h3>
+                      <p>Muchas veces las molestias causadas por un arco, pueden ser resueltas alejando el arco de la zona irritada con un bastoncillo de algodón o con la goma de un lápiz. Si el arco no se mueve, prueba cubriendo el extremo con un trozo de algodón o un pedazo de cera. </p>
+                      <p>Si el arco molesta mucho, se puede cortar con unas alicates pequeñas o cortaúñas que se hayan esterilizado con alcohol o también puedes intentar desplazar el arco a su posición natural con unas pinzas de depilar. </p>
+                      <p>Si no resuelves el problema llámanos  para que podamos ayudarte.</p>
+                    </div>
+            <!----> 
+          </div>
+                  <!--primera ayuda-->
+                  <div data-role="collapsible" data-collapsed="true" data-theme="f">
+            <h3> Instrucciones para casa </h3>
+            <!---->
+            
+            <div data-role="collapsible" data-collapsed="true" data-theme="a">
+                      <h3> Brackets</h3>
+                      <p>No partas los alimentos duros directamente con los dientes: nueces, hielo, manzanas, zanahorias crudas, pan de corteza dura, costillas con hueso, maíz o palomitas. Estas comidas tienen el riesgo de romper los brackets o arcos. Debes trocearlos para evitar problemas. También debes evitar comerte las uñas o hábitos como morder lápices. Tampoco se deben comer cosas pegajosas como caramelos, chicles, gominolas de cualquier clase. Utiliza el sentido común para elegir las comidas adecuadas.</p>
+                      <p> Evitar comidas duras:   Frutos secos,  Palomitas,  Bocadillos,  Rosquillas,  Manzanas,  Mazorcas de maíz,  Cortezas,  Zanahorias crudas etc..</p>
+                      <p>Minimizar el consumo de azúcar comiendo y bebiendo menos:   Caramelos,  Helado,  Pasteles,  Leche con Cola Cao,  Galletas de chocolate,  Comidas con azúcar,   Refrescos azucarados etc...</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                      <h3>Invisalign </h3>
+                      <p>Invisalign usa retenedores transparentes y removibles llamados alineadores que mueven gradualmente la dentadura. Los alineadores deben llevarse 24 horas al día a excepción de las comidas o cepillados. Los pacientes reciben nuevos alineadores periódicamente.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="d">
+                      <h3> Expansor del paladar</h3>
+                      <p>Es un aparato usado para ensanchar el maxilar superior o paladar. Está fijado en la boca del paciente y usualmente debe llevarse durante unos 6 meses. El paciente usa una llave para ir ampliando el paladar. Se suele ajustar cada una, dos o tres noches según las indicaciones del Ortodoncista.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="e">
+                      <h3> Retenedor fijo</h3>
+                      <p>Usa hilo dental diariamente para mantener tu dentadura limpia alrededor del retenedor fijo. Debes cepillar normalmente el retenedor como el resto de la boca. Evitar hacer palanca con cosas duras directamente en el retenedor.</p>
+                    </div>
+            <div data-role="collapsible" data-collapsed="true" data-theme="f">
+                      <h3> Retenedor removible</h3>
+                      <p>Los retenedores removibles deben llevarse por las noches. Haciéndolo, aseguras que tu dentadura permanezca en la posición deseada. Si el retenedor no ajusta correctamente llámanos para fijar una cita y revisarlo.</p>
+                    </div>
+            
+            <!----> 
+          </div>
+                  <!--instrucciones--> 
+                </div>
+        <!--problemas comunes--> 
+      </div>
+              <!--pc--> 
+            </div>
+  </div>
+          <!--footer-->
+          <div data-theme="c" data-role="footer" data-position="fixed" data-id="foo1"> 
+    <!--<h3>
+                    Footer
+                </h3>-->
+    <div id="inicio" data-role="navbar" data-iconpos="top" class="cynav">
+              <ul>
+        <li> <a href="#inicio" data-transition="none" data-theme="c" data-icon="llaca-home" > Inicio </a> </li>
+        <li> <a href="refiere.html" data-transition="none" data-theme="c" data-icon="llaca-refiere"> Recomienda </a> </li>
+        <li> <a href="casos.html" data-transition="none" data-theme="c" data-icon="llaca-casos"> Casos </a> </li>
+        <li> <a href="#mas" data-transition="none" data-theme="c" data-icon="llaca-mas"> Más </a> </li>
+      </ul>
+            </div>
+  </div>
+          <!--footer--> 
+        </div>
+</body>
+</html>

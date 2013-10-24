@@ -1,0 +1,22 @@
+#logollaca  {
+	width:100%;
+	height:100%;
+	margin-left:auto;
+	margin-top:auto;
+	margin-right:auto;
+	text-align:center;
+	}
+.centra {
+	text-align:center;
+	}
+	
+.mitad {
+	width:50%;
+	}	
+.nub_amarilla{
+	background: linear-gradient(rgb(255, 210, 0), rgb(245, 148, 0));
+	}
+.ui-cyber{
+	width:36px;
+	height::36px;	
+	}	
