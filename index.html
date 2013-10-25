@@ -13,7 +13,7 @@
 	<script src="jquery.mobile-1.3.2.js"></script>
     <script src="my.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="webintent.js"></script>
+    <script type="text/javascript" charset="utf-8" src="EmailComposer.js"></script>
     <script>
             try {
 
@@ -30,139 +30,59 @@
     var pictureSource;   
     var destinationType; 
 	var fotoamandar;
-
+	var mifoto;
     document.addEventListener("deviceready",onDeviceReady,false);
     function onDeviceReady() {
 		pictureSource=navigator.camera.PictureSourceType; 
 		destinationType=navigator.camera.DestinationType; 
 		}
-	
 	function mandarfoto() {
 	var subject = 'Foto de emergencia desde Llaca Apli.';
 	var para = 'info@llaca.com';
 	var cuerpo = 'Foto de emergencia desde Llaca Aplicación';
     var extras = {};
-    extras[WebIntent.EXTRA_EMAIL] = para;
-    extras[WebIntent.EXTRA_SUBJECT] = subject;
-    extras[WebIntent.EXTRA_TEXT] = cuerpo;
-    extras[WebIntent.EXTRA_STREAM]=fotoamandar.src;
-    WebIntent.prototype.startActivity({ 
-       action: WebIntent.ACTION_SEND,
-       type: 'application/octet-stream', 
-       extras: extras 
-     }, 
-     function() {
-      /*alert("Enviada...");*/
-     }, 
-     function() {
-       alert('Fallo al enviar foto..');
-     }
-   ); 
-	}//
-// prueba whatsapp
-function mandagua(){
-var extras = {};
-	extras[webintent.EXTRA_TEXT] = 'Hola mundo';
-	 WebIntent.prototype.startActivity({ 
-		action: Webintent.ACTION_SEND,
-		type: 'text/plain', 
-		package: 'com.whatsapp',
-		extras: extras 
-		}, 
-		function() {
-			// OK
-		}, 
-		function() {
-			alert('No Existe Whatsapp..');
-		}
-	);
-}
-// 
-	function procesarCita() {
+	mifoto = mifoto.substring(5);
+	window.plugins.emailComposer.showEmailComposerWithCallback(function(result){console.log(result);},subject,cuerpo,[para],[],[],true,[mifoto]);
+	}
+//
+function procesarCita() {
 	var subject = 'Cita solicitada desde Llaca Apli.';
 	var para = 'info@llaca.com';
 	var cuerpo = 'Cita desde Llaca Aplicación';
-    var extras = {};
-    extras[WebIntent.EXTRA_EMAIL] = para;
-    extras[WebIntent.EXTRA_SUBJECT] = subject;
-    extras[WebIntent.EXTRA_TEXT] = cuerpo;
 	if(window.document.formcita.nombre.value=='' || document.formcita.telefono.value=='' || document.formcita.email.value== '' ){
 		alert('Por favor rellena todos los campos');
 		} 
 		else{
-		extras[WebIntent.EXTRA_TEXT] ='<html><p><strong>PACIENTE:</strong> '+window.document.formcita.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.formcita.telefono.value+'</p><p><strong>EMAIL: </strong>'+document.formcita.email.value+'</p></html>';
+			cuerpo = cuerpo + '<html><p><strong>PACIENTE:</strong> '+window.document.formcita.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.formcita.telefono.value+'</p><p><strong>EMAIL: </strong>'+document.formcita.email.value+'</p></html>';
+			window.plugins.emailComposer.showEmailComposerWithCallback(function(result){console.log(result);},subject,cuerpo,[para],[],[],true,[]);
 		
-     WebIntent.prototype.startActivity({ 
-       action: WebIntent.ACTION_SEND,
-       type: 'text/html', 
-       extras: extras 
-     }, 
-     function() {
-      alert("Enviada...");
-     }, 
-     function() {
-       alert('Fallo al enviar cita..');
-     }
-   ); 
 		}
 	}//procesar cita
-	//procesar feedback
-	 
-	function procesarFeed() {
+function procesarFeed() {
 	var subject = 'Feedback desde Llaca Apli.';
 	var para = 'info@llaca.com';
 	var cuerpo = 'Feedback desde Llaca Aplicación';
-    var extras = {};
-    extras[WebIntent.EXTRA_EMAIL] = para;
-    extras[WebIntent.EXTRA_SUBJECT] = subject;
-    extras[WebIntent.EXTRA_TEXT] = cuerpo;
 	if(window.document.forfeedback.nombre.value=='' || document.forfeedback.telefono.value=='' || document.forfeedback.email.value== ''  || document.forfeedback.comentario.value=='' ){
 		alert('Por favor rellena todos los campos');
 		} 
 		else{
-		extras[WebIntent.EXTRA_TEXT] ='<html><p><strong>NOMBRE:</strong> '+window.document.forfeedback.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.forfeedback.telefono.value+'</p><p><strong>EMAIL:</strong> '+document.forfeedback.email.value+'</p><p><strong>COMENTARIOS:</strong> '+document.forfeedback.comentario.value+'</p></html>';
-		
-     WebIntent.prototype.startActivity({ 
-       action: WebIntent.ACTION_SEND,
-       type: 'text/html', 
-       extras: extras 
-     }, 
-     function() {
-      alert("Enviado...");
-     }, 
-     function() {
-       alert('Fallo al enviar feedback..');
-     }
-   ); 
+			cuerpo= cuerpo + '<html><p><strong>NOMBRE:</strong> '+window.document.forfeedback.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.forfeedback.telefono.value+'</p><p><strong>EMAIL:</strong> '+document.forfeedback.email.value+'</p><p><strong>COMENTARIOS:</strong> '+document.forfeedback.comentario.value+'</p></html>';
+		window.plugins.emailComposer.showEmailComposerWithCallback(function(result){console.log(result);},subject,cuerpo,[para],[],[],true,[]);
 		}
 	}
 	//procesar experiencia
-	function procesarExp() {
+function procesarExp() {
 	var subject = 'Experiencia desde Llaca Apli.';
 	var para = 'info@llaca.com';
 	var cuerpo = 'Experiencia desde Llaca Aplicación';
-    var extras = {};
-    extras[WebIntent.EXTRA_EMAIL] = para;
-    extras[WebIntent.EXTRA_SUBJECT] = subject;
-    extras[WebIntent.EXTRA_TEXT] = cuerpo;
+
 	if(window.document.forexpeiencia.nombre.value=='' || document.forexpeiencia.telefono.value=='' || document.forexpeiencia.email.value== ''  || document.forexpeiencia.comentario.value=='' ){
 		alert('Por favor rellena todos los campos');
 		} 
 		else{
-		extras[WebIntent.EXTRA_TEXT] ='<html><p><strong>NOMBRE:</strong> '+window.document.forexpeiencia.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.forexpeiencia.telefono.value+'</p><p><strong>EMAIL:</strong> '+document.forexpeiencia.email.value+'</p><p><strong>COMENTARIOS:</strong> '+document.forexpeiencia.comentario.value+'</p></html>';
-		
-     WebIntent.prototype.startActivity({ 
-       action: WebIntent.ACTION_SEND,
-       type: 'text/html', 
-       extras: extras 
-     }, 
-     function() {
-      alert("Enviado...");
-     }, 
-     function() {
-       alert('Fallo al enviar experiencia..');
-     }
-   ); 
+			cuerpo= cuerpo +'<html><p><strong>NOMBRE:</strong> '+window.document.forexpeiencia.nombre.value+'</p><p><strong>TELEFONO:</strong> '+document.forexpeiencia.telefono.value+'</p><p><strong>EMAIL:</strong> '+document.forexpeiencia.email.value+'</p><p><strong>COMENTARIOS:</strong> '+document.forexpeiencia.comentario.value+'</p></html>';
+		window.plugins.emailComposer.showEmailComposerWithCallback(function(result){console.log(result);},subject,cuerpo,[para],[],[],true,[]);
+
 		}
 	}
 	//procesar feedback
@@ -170,8 +90,7 @@ var extras = {};
 		alert('Failed because: ' + message);
 		}
 	function fotografia() {	
-/*		navigator.camera.getPicture(onSuccess, onFail, { quality: 75,  destinationType:1, sourceType: 1, targetWidth: 1280, targetHeight: 960 });
-*/		navigator.camera.getPicture(onSuccess, onFail, { quality: 75,  destinationType:1, sourceType: 1, targetWidth: 1280, targetHeight: 960 });
+		navigator.camera.getPicture(onSuccess, onFail, { quality: 50,  destinationType:1, sourceType: 1, encodingType: 1, targetWidth: 1280, targetHeight: 960 });
 
 		 }
 	function onSuccess(fileURI) { 
@@ -179,6 +98,7 @@ var extras = {};
 		fotoamandar = document.getElementById('imagen1');
 		img1.src = fileURI;
 		fotoamandar.src= fileURI;
+		mifoto=fileURI;
 		img1.style.display = 'block';
 		console.log(fileURI);	
 		}
